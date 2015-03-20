@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+defaultTasks 'clean', 'build'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.bukkit.org/content/groups/public/" }
+}
+
+dependencies {
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.7.9-R0.2'
+}
+
+processResources {
+    expand project.properties
+}
