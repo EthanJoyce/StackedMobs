@@ -1,4 +1,4 @@
-[![Travis-CI build status](https://travis-ci.org/mrlolethan/StackedMobs.svg)](https://travis-ci.org/mrlolethan/StackedMobs)
+[![Travis-CI build status](https://travis-ci.org/mrlolethan/StackedMobs.svg?branch=master)](https://travis-ci.org/mrlolethan/StackedMobs)
 # StackedMobs
 "Stack" nearby mobs to improve server performance.
 
