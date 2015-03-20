@@ -1,0 +1,35 @@
+# StackedMobs configuration
+
+
+# The radius in that mobs will be stacked.
+# Measured in "meters" (blocks).
+#  For example: 1 = mobs within 1 block of eachother will be stacked.
+#               5 = mobs within 5 blocks of eachother will be stacked.
+# Default: 1
+StackRadius: 1
+
+
+# This is a list of all mob types that we want to stack.
+# ONLY mob types in this list will be stacked.
+MobTypes:
+    - Skeleton
+    - Zombie
+    - Spider
+    - Cave_Spider
+    - Enderman
+
+
+# The update delay for stacking mobs, in ticks.
+#  For example, 20 would check for and stack mobs every 20 ticks (1 second).
+# Default: 20
+UpdateTickDelay: 20
+
+
+# The stack number (mob's name) color code.
+# A list of formatting codes can be found here:
+#  http://minecraft.gamepedia.com/Formatting_codes
+# Default: 'f' (White)
+# WARNING: This will break all current stacks!
+#  DO NOT CHANGE AFTER USING THE PLUGIN ON A SERVER.
+StackNumberColor: 'f'
+
