@@ -21,20 +21,22 @@ public enum StacksUtil {;
 		String displayName = livingEntity.getCustomName();
 		int stackAmt = parseAmount(displayName);
 
+		// Kill this mob
+		livingEntity.setHealth(0);
+
 		if (stackAmt <= 1) {
-			// The stack is down to one mob
-			livingEntity.setHealth(0);
+			// The stack is down to one mob; don't recreate it
 			return false;
 		}
 
-		// Spawn a new mob and instantly kill it
-		LivingEntity dupEntity = (LivingEntity) livingEntity.getWorld().spawnEntity(livingEntity.getLocation(), livingEntity.getType());
-		dupEntity.setHealth(0);
-
-		// Update the mob stack's status
+		// Recreate the stack with one less mob
 		stackAmt--;
 		String newDisplayName = String.format(stackNumberColor + CUSTOM_NAME_FORMAT, stackAmt);
-		livingEntity.setCustomName(newDisplayName);
+
+		LivingEntity dupEntity = (LivingEntity) livingEntity.getWorld().spawnEntity(livingEntity.getLocation(), livingEntity.getType());
+		dupEntity.setCustomName(newDisplayName);
+		dupEntity.setCustomNameVisible(true);
+
 		return true;
 	}
 
